@@ -11,9 +11,10 @@ Read Fa languages from OS:
 
 Read En lanugages from OS:
 
-![Demo](https://github.com/majidln/RNLocalization/blob/master/screenshot/en1.png)
+![Demo](https://github.com/majidln/RNLocalization/blob/master/screenshot/en.png)
+
 
 
 Read En language file from switch to En button:
 
-![Demo](https://github.com/majidln/RNLocalization/blob/master/screenshot/en.png)
+![Demo](https://github.com/majidln/RNLocalization/blob/master/screenshot/en1.png)
