@@ -28,20 +28,21 @@ export const LanguageContextProvider = ({ children }) => {
         ...languageObj[selectedLanguage],
     };
 
-    return <LanguageContext.Provider value={{ language: languageObj[selectedLanguage], setLanguage: setSelectedLanguage }}>{children}</LanguageContext.Provider>
+    return <LanguageContext.Provider value={{ translate: languageObj[selectedLanguage], setLanguage: setSelectedLanguage, selectedLanguage: selectedLanguage }}>{children}</LanguageContext.Provider>
 }
 
 export const useTranslate = () => useContext(LanguageContext);
 
 export function withTranslate(Component) {
     return props => {
-        const { language, setLanguage } = useContext(LanguageContext);
+        const { translate, selectedLanguage, setLanguage } = useContext(LanguageContext);
 
         return (
             <Component
                 {...props}
-                translate={language}
+                translate={translate}
                 setLanguage={(lang) => setLanguage(lang)}
+                selectedLanguage={selectedLanguage}
             />
         );
     };
