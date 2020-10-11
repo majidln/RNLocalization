@@ -1,3 +1,7 @@
 {
-    "welcome": "Welcome to localization app"
+    "welcome": "Welcome to localization app",
+    "langs": {
+        "en": "English",
+        "fa": "فارسی"
+    }
 }

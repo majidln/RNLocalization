@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, SafeAreaView, StyleSheet, View, TouchableOpacity } from 'react-native';
 import { withTranslate } from './../context/languageContext'
+import LanguagesSwitcher from './../components/languagesSwitcher'
 
 function Home({ translate, setLanguage }) {
     const changeLang = (lang = 'en') => {
@@ -14,14 +15,7 @@ function Home({ translate, setLanguage }) {
                     {translate.welcome}
                 </Text>
             </View>
-            <View style={styles.operationWrapper}>
-                <TouchableOpacity onPress={() => changeLang('fa-IR')} style={styles.button}>
-                    <Text style={styles.buttonText}>Fa</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => changeLang('en')} style={styles.button}>
-                    <Text style={styles.buttonText}>EN</Text>
-                </TouchableOpacity>
-            </View>
+            <LanguagesSwitcher />
         </SafeAreaView>
 
     )
@@ -39,19 +33,6 @@ const styles = StyleSheet.create({
     text: {
         textAlign: 'center',
         fontSize: 22
-    },
-    operationWrapper: {
-        flexDirection: 'row',
-    },
-    button: {
-        flex: 1,
-        borderWidth: 1,
-        borderColor: 'gray'
-    },
-    buttonText: {
-        fontSize: 20,
-        textAlign: 'center',
-        padding: 20
     }
 })
 
