@@ -7,16 +7,15 @@
  */
 
 import React from 'react';
-import { LanguageContextProvider } from './context/languageContext';
-import HomeScreen from './screen/home'
+import {LanguageContextProvider} from './context/languageContext';
+import HomeScreen from './screen/home';
 
 function App() {
-
   return (
     <LanguageContextProvider>
       <HomeScreen />
     </LanguageContextProvider>
   );
-};
+}
 
 export default App;
