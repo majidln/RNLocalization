@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,20 +14,16 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import {LanguageContextProvider} from './context/languageContext';
+import HomeScreen from './screen/home'
 
+function App()  {
 
-const App: () => React$Node = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={styles.wrapper}>
-        <View style={styles.contentWrapper}>
-          <Text style={styles.text}>
-            Welcome to Localization
-          </Text>
-        </View>
-      </SafeAreaView>
-    </>
+    <LanguageContextProvider>
+      <HomeScreen />
+      
+    </LanguageContextProvider>
   );
 };
 
