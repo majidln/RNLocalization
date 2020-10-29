@@ -2,7 +2,6 @@ import React, {useState, useEffect, useContext} from 'react';
 import en from '../locale/en.json';
 import fa from '../locale/fa.json';
 import * as RNLocalize from 'react-native-localize';
-import {localize} from 'i18n-js';
 
 const languageObj = {
   en: en,
@@ -16,16 +15,12 @@ export const LanguageContextProvider = ({children}) => {
 
   useEffect(() => {
     const fallback = {languageTag: selectedLanguage, isRTL: false};
-    const {languageTag, isRTL} =
+    const {languageTag} =
       RNLocalize.findBestAvailableLanguage(Object.keys(languageObj)) ||
       fallback;
 
     setSelectedLanguage(languageTag);
-  }, []);
-
-  const value = {
-    ...languageObj[selectedLanguage],
-  };
+  }, [selectedLanguage]);
 
   return (
     <LanguageContext.Provider
@@ -35,7 +30,7 @@ export const LanguageContextProvider = ({children}) => {
         selectedLanguage: selectedLanguage,
       }}>
       {children}
-    </LanguageContext.Provider>;
+    </LanguageContext.Provider>
   );
 };
 
