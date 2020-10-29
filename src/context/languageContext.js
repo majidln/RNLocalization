@@ -6,6 +6,7 @@ import * as RNLocalize from 'react-native-localize';
 const languageObj = {
   en: en,
   'fa-IR': fa,
+  'fa-AF': fa,
 };
 
 const LanguageContext = React.createContext();
@@ -18,9 +19,8 @@ export const LanguageContextProvider = ({children}) => {
     const {languageTag} =
       RNLocalize.findBestAvailableLanguage(Object.keys(languageObj)) ||
       fallback;
-
     setSelectedLanguage(languageTag);
-  }, [selectedLanguage]);
+  }, []);
 
   return (
     <LanguageContext.Provider

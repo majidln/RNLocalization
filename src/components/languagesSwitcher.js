@@ -4,6 +4,7 @@ import {withTranslate} from './../context/languageContext';
 
 function LanguagesSwitcher({translate, setLanguage, selectedLanguage}) {
   const changeLang = (lang = 'en') => {
+    console.log('changeLang', lang)
     setLanguage(lang);
   };
 
